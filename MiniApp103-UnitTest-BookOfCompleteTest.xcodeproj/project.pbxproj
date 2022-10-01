@@ -17,6 +17,7 @@
 		871F175F28E6CCD600D0036F /* MiniApp103_UnitTest_BookOfCompleteTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871F175E28E6CCD600D0036F /* MiniApp103_UnitTest_BookOfCompleteTestTests.swift */; };
 		871F176928E6CCD600D0036F /* MiniApp103_UnitTest_BookOfCompleteTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871F176828E6CCD600D0036F /* MiniApp103_UnitTest_BookOfCompleteTestUITests.swift */; };
 		871F176B28E6CCD600D0036F /* MiniApp103_UnitTest_BookOfCompleteTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871F176A28E6CCD600D0036F /* MiniApp103_UnitTest_BookOfCompleteTestUITestsLaunchTests.swift */; };
+		871F177828E6CE1C00D0036F /* PasswordStringCheckModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871F177728E6CE1C00D0036F /* PasswordStringCheckModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		871F176428E6CCD600D0036F /* MiniApp103-UnitTest-BookOfCompleteTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MiniApp103-UnitTest-BookOfCompleteTestUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		871F176828E6CCD600D0036F /* MiniApp103_UnitTest_BookOfCompleteTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniApp103_UnitTest_BookOfCompleteTestUITests.swift; sourceTree = "<group>"; };
 		871F176A28E6CCD600D0036F /* MiniApp103_UnitTest_BookOfCompleteTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniApp103_UnitTest_BookOfCompleteTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		871F177728E6CE1C00D0036F /* PasswordStringCheckModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStringCheckModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				871F175228E6CCD600D0036F /* LaunchScreen.storyboard */,
 				871F175528E6CCD600D0036F /* Info.plist */,
 				871F174D28E6CCD500D0036F /* MiniApp103_UnitTest_BookOfCompleteTest.xcdatamodeld */,
+				871F177728E6CE1C00D0036F /* PasswordStringCheckModel.swift */,
 			);
 			path = "MiniApp103-UnitTest-BookOfCompleteTest";
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				871F177828E6CE1C00D0036F /* PasswordStringCheckModel.swift in Sources */,
 				871F174F28E6CCD500D0036F /* MiniApp103_UnitTest_BookOfCompleteTest.xcdatamodeld in Sources */,
 				871F174928E6CCD500D0036F /* ViewController.swift in Sources */,
 				871F174528E6CCD500D0036F /* AppDelegate.swift in Sources */,

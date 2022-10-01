@@ -6,30 +6,64 @@
 //
 
 import XCTest
+/*
+ testable import は、
+ プロジェクトのメインターゲットにバンドルされているクラスなどにアクセスするためのインポート。
+ このキーワードでテストターゲットからインポートしたターゲットは、
+ internal のアクセスレベルにあるクラスなどにアクセス可能。
+ */
 @testable import MiniApp103_UnitTest_BookOfCompleteTest
 
-final class MiniApp103_UnitTest_BookOfCompleteTestTests: XCTestCase {
+/*
+ XCTestCase は、
+ テストケースを定義していくためのクラス。
+ このクラスにテストケースを定義していくことで、特定のライフサイクルにしたがって XCTest がテストを評価していく。
+ */
+class PasswordValidatorTests1: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    // XCTest で書くテストケースは関数名のはじまりを test とする必要がある。
+    // 8文字以上であること
+    func testFalseIs2Characters_Total7Characters() {
+        XCTAssertFalse(PasswordStringCheckModel.validate(password: "abcde12"), "ここに失敗時のメッセージつけれる")
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testTrueIs2Characters_Total8Characters() {
+        XCTAssertTrue(PasswordStringCheckModel.validate(password: "abcdef12"))
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testTrueIs2Characters_Total9Characters() {
+        XCTAssertTrue(PasswordStringCheckModel.validate(password: "abcdefg12"))
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    // 数字が2文字以上利用されていること
+    func testFalseIsNonNumeric7Characters_1Numeric() {
+        XCTAssertFalse(PasswordStringCheckModel.validate(password: "abcdefg1"))
+    }
+
+    func testTrueIsNonNumeric7Characters_2Numeric() {
+        XCTAssertTrue(PasswordStringCheckModel.validate(password: "abcdefg12"))
+    }
+
+    func testTrueIsNonNumeric7Characters_3Numeric() {
+        XCTAssertTrue(PasswordStringCheckModel.validate(password: "abcdefg123"))
+    }
+
+}
+
+// テストは構造化もできる。
+class PasswordValidatorTests2: XCTestCase {
+
+    func testパスワードバリデーションの文字数() {
+        XCTContext.runActivity(named: "数字が2文字以上含まれている場合") { _ in
+            XCTContext.runActivity(named: "合計7文字が入力された場合") { _ in
+                XCTAssertFalse(PasswordStringCheckModel.validate(password: "abcde12"))
+            }
+            XCTContext.runActivity(named: "合計8文字が入力された場合") {_ in
+                XCTAssertTrue(PasswordStringCheckModel.validate(password: "abcdef12"))
+            }
+            XCTContext.runActivity(named: "合計9文字が入力された場合") { _ in
+                XCTAssertTrue(PasswordStringCheckModel.validate(password: "abcdefg12"))
+            }
         }
     }
 
